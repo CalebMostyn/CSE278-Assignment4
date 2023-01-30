@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Local Used Cars</title>
+
+  <link rel="stylesheet" href="css/style2.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+  <html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Login</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+    <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+
+    <script type="text/javascript">
+      function test() {
+        alert('working');
+      }
+
+      function getUsername() {
+        var sPageURL = window.location.href;
+        for (let i = 0; i < sPageURL.length; i++) {
+          if (sPageURL.charAt(i) == '#') {
+            return sPageURL.substring(i + 1);
+          }
+        }
+      }
+
+      function account() {
+        var link = "account.html#" + getUsername();
+        window.location.href = link;
+      }
+      function post() {
+        var link = "post.html#" + getUsername();
+        window.location.href = link;
+      }
+      function search() {
+        var link = "search.html#" + getUsername();
+        window.location.href = link;
+      }
+      function view() {
+        var link = "view.html#" + getUsername();
+        window.location.href = link;
+      }
+      function remove() {
+        var link = "remove.html#" + getUsername();
+        window.location.href = link;
+      }
+    </script>
+
+
+  </head>
+
+
+
+
+
+
+  <body>
+
+    <div class="container">
+
+      <div id="login">
+
+        <h1>Local Used Cars</h1>
+        <br>
+        <br>
+        <form action="process.cgi" method="POST">
+
+          <fieldset class="clearfix">
+
+            <p><input type="button" onclick="account();" value="My Account"></p>
+            <p><input type="button" onclick="post();" value="Post a Car"></p>
+            <p><input type="button" onclick="remove();" value="Remove a Car"></p>
+            <p><input type="button" onclick="search();" value="Search Cars"></p>
+            <p><input type="button" onclick="view();" value="View a Car"></p>
+            <p><input type="button" onclick="window.location.href='login.html';" value="Logout"></p>
+
+          </fieldset>
+
+        </form>
+
+        <br>
+
+        <br>
+
+        <div class="heading-frame">
+        </div>
+
+      </div> <!-- end login -->
+
+    </div>
+
+
+  </body>
+
+  </html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Local Used Cars</title>
+
+  <link rel="stylesheet" href="css/style3.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+  <html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Login</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+    <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+
+    <script type="text/javascript">
+      function test() {
+        alert('working');
+      }
+
+      function getUsername() {
+        var sPageURL = window.location.href;
+        for (let i = 0; i < sPageURL.length; i++) {
+          if (sPageURL.charAt(i) == '#') {
+            return sPageURL.substring(i + 1);
+          }
+        }
+      }
+
+      function submitUsername() {
+        document.getElementById("username").value = getUsername();
+      }
+
+    </script>
+
+  </head>
+
+
+
+  <body>
+
+    <div class="container">
+
+      <div id="login">
+
+        <h1>Local Used Cars</h1>
+        <br>
+        <p>Update Account Details</p>
+        <br>
+        <form action="account.cgi" method="POST">
+
+          <fieldset class="clearfix">
+
+
+
+            <span class="fontawesome-chevron-down"></span>
+            <select name="dropdown">
+              <option value="password" selected>Password</option>
+              <option value="email">Email Address</option>
+              <option value="city">City</option>
+              <option value="phoneNumber">Phone Number</option>
+            </select>
+
+
+            <p><span class="fontawesome-upload"></span><input type="text" name="text" value="Update Account"
+                onBlur="if(this.value == '') this.value = 'Update Account'"
+                onFocus="if(this.value == 'Update Account') this.value = ''" required></p>
+            <!-- JS because of IE support; better: placeholder="Username" -->
+            <input type="hidden" name="username" id="username">
+            <input type="submit" value="Submit Update" onclick="submitUsername();" />
+            <p><input type="button" onclick="window.location.href='login.html';" value="Logout"></p>
+          </fieldset>
+
+        </form>
+
+        <br>
+        <br>
+
+        <div class="heading-frame">
+        </div>
+
+      </div> <!-- end login -->
+
+    </div>
+
+
+
+  </body>
+
+  </html>
+
+</body>
+
+</html>

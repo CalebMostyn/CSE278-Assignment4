@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Local Used Cars</title>
+
+  <link rel="stylesheet" href="css/style5.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+  <html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Login</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+    <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+
+    <script type="text/javascript">
+      function test() {
+        alert('working');
+      }
+
+      function getUsername() {
+        var sPageURL = window.location.href;
+        for (let i = 0; i < sPageURL.length; i++) {
+          if (sPageURL.charAt(i) == '#') {
+            return sPageURL.substring(i + 1);
+          }
+        }
+      }
+
+      function submitUsername() {
+        document.getElementById("username").value = getUsername();
+      }
+
+    </script>
+
+  </head>
+
+
+
+  <body>
+
+    <div class="container">
+
+      <div id="login">
+
+        <h1>Local Used Cars</h1>
+        <br>
+        <p>Post a Car For Sale</p>
+        <br>
+        <form action="post.cgi" method="POST">
+
+          <fieldset class="clearfix">
+
+            <p><span class="fontawesome-cog"></span><input type="text" name="make" value="Make of Car"
+                onBlur="if(this.value == '') this.value = 'Make of Car'"
+                onFocus="if(this.value == 'Make of Car') this.value = ''" required></p>
+            <!-- JS because of IE support; better: placeholder="Username" -->
+            <p><span class="fontawesome-barcode"></span><input type="text" name="model" value="Model of Car"
+                onBlur="if(this.value == '') this.value = 'Model of Car'"
+                onFocus="if(this.value == 'Model of Car') this.value = ''" required></p>
+            <!-- JS because of IE support; better: placeholder="Password" -->
+            <p><span class="fontawesome-ambulance"></span><input type="text" name="mileage" value="Mileage of Car"
+                onBlur="if(this.value == '') this.value = 'Mileage of Car'"
+                onFocus="if(this.value == 'Mileage of Car') this.value = ''" required></p>
+            <!-- JS because of IE support; better: placeholder="Username" -->
+            <p><span class="fontawesome-calendar"></span><input type="text" name="year" value="Year of Car"
+                onBlur="if(this.value == '') this.value = 'Year of Car'"
+                onFocus="if(this.value == 'Year of Car') this.value = ''" required></p>
+            <!-- JS because of IE support; better: placeholder="Username" -->
+            <p><span class="fontawesome-money"></span><input type="text" name="price" value="Price of Car"
+                onBlur="if(this.value == '') this.value = 'Price of Car'"
+                onFocus="if(this.value == 'Price of Car') this.value = ''" required></p>
+            <!-- JS because of IE support; better: placeholder="Username" -->
+            <p><textarea name="description" maxlength="255"
+                onBlur="if(this.value == '') this.value = 'Short Description of Car'"
+                onFocus="if(this.value == 'Short Description of Car') this.value = ''"
+                required>Short Description of Car</textarea></p>
+            <!-- JS because of IE support; better: placeholder="Username" -->
+            <input type="hidden" name="username" id="username">
+            <p><input type="submit" value="Post" onclick="submitUsername();"></p>
+            <p><input type="button" onclick="window.location.href='login.html';" value="Logout"></p>
+          </fieldset>
+
+        </form>
+
+        <br>
+
+
+        <div class="heading-frame">
+        </div>
+
+      </div> <!-- end login -->
+
+    </div>
+
+
+
+  </body>
+
+  </html>
+
+</body>
+
+</html>

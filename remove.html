@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Local Used Cars</title>
+
+  <link rel="stylesheet" href="css/style5.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+  <html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Login</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+    <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+
+    <script type="text/javascript">
+      function test() {
+        alert('working');
+      }
+
+      function getUsername() {
+        var sPageURL = window.location.href;
+        for (let i = 0; i < sPageURL.length; i++) {
+          if (sPageURL.charAt(i) == '#') {
+            return sPageURL.substring(i + 1);
+          }
+        }
+      }
+
+      function submitUsername() {
+        document.getElementById("username").value = getUsername();
+      }
+
+    </script>
+
+  </head>
+
+
+
+  <body>
+
+    <div class="container">
+
+      <div id="login">
+
+        <h1>Local Used Cars</h1>
+        <br>
+        <p>Remove a Specific Car by ID Number</p>
+        <br>
+        <form action="remove.cgi" method="POST">
+
+          <fieldset class="clearfix">
+
+            <p><span class="fontawesome-trash"></span><input type="text" name="id" value="ID of Car"
+                onBlur="if(this.value == '') this.value = 'ID of Car'"
+                onFocus="if(this.value == 'ID of Car') this.value = ''" required></p>
+            <!-- JS because of IE support; better: placeholder="Username" -->
+            <input type="hidden" name="username" id="username">
+            <p><input type="submit" value="Search" onclick="submitUsername();"></p>
+            <p><input type="button" onclick="window.location.href='login.html';" value="Logout"></p>
+          </fieldset>
+
+        </form>
+
+        <br>
+
+        <br>
+
+        <div class="heading-frame">
+        </div>
+
+      </div> <!-- end login -->
+
+    </div>
+
+
+
+  </body>
+
+  </html>
+
+</body>
+
+</html>
